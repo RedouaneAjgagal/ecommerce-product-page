@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce product page</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon">
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- css -->
+    <link rel="stylesheet" href="./styles/css.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="links">
+                <span class="toggle" role="button" aria-label="mobile navigation trigger" aria-expanded="false"><img src="./images/icon-menu.svg" alt="" aria-disabled="true"></span>
+                <a class="logo" href="#" aria-label="Home page"><img src="./images/logo.svg" alt="Sneakers Logo"></a>
+                <ul class="navLinks">
+                    <li><a href="#">Collections</a></li>
+                    <li><a href="#">Men</a></li>
+                    <li><a href="#">Women</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <div class="zoomMode"></div>
+                <div class="burgerMenu"></div>
+            </div>
+            <div class="user">
+                <a class="cart" href="#" aria-label="Shop Cart"><img src="./images/icon-cart.svg" aria-disabled="true"><span class="cartAmount">3</span></a>
+                <article class="insideCart">
+                    <header>
+                        <h3>Cart</h3>
+                    </header>
+                    <main>
+                        <div class="emptyCart">
+                            <p>Your cart is empty.</p>
+                        </div>
+                        <div class="fullCart">
+                            <div class="product">
+                                <img class="checkOutImg" src="./images/image-product-1-thumbnail.jpg" alt="Fall limited edition sneaker">
+                                <div class="productDetails">
+                                    <h2 class="checkOutTitle">Fall Limited Edition Sneakers</h2>
+                                    <div class="prices">
+                                        <span class="productPrice">$125.00</span>
+                                        <span class="quantity">x 3</span>
+                                        <span class="total">$375.00</span>
+                                    </div>
+                                </div>
+                                <span class="delete" role="button"><img src="./images/icon-delete.svg" alt="" aria-disabled="true"></span>
+                            </div>
+                            <div class="checkOut">
+                                <a href="#" aria-label="checkout">Checkout</a>
+                            </div>
+                        </div>
+                    </main>
+                </article>
+                <a class="profile" href="#" aria-label="Account Profile"><img src="./images/image-avatar.png" alt="Account Profile"></a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <figure class="images">
+            <div class="main-img">
+                <img class="mainImg mainImgNormalMode" src="./images/image-product-1.jpg" alt="Fall limited edition sneaker">
+                <span class="previous" role="button" aria-label="previous image"><img src="./images/icon-previous.svg" alt="" aria-disabled="true"></span>
+                <span class="next" role="button" aria-label="next image"><img src="./images/icon-next.svg" alt="" aria-disabled="true"></span>
+            </div>
+            <div class="thumbnail-img">
+                <img class="thumbnail active" id="productImg" src="./images/image-product-1-thumbnail.jpg" alt="Fall limited edition sneaker">
+                <img class="thumbnail" src="./images/image-product-2-thumbnail.jpg" alt="Fall limited edition sneaker">
+                <img class="thumbnail" src="./images/image-product-3-thumbnail.jpg" alt="Fall limited edition sneaker">
+                <img class="thumbnail" src="./images/image-product-4-thumbnail.jpg" alt="Fall limited edition sneaker">
+            </div>
+        </figure>
+        <figure class="images onClick">
+            <div class="close">
+                <span class="closeOnClickImages" role="button" aria-label="close the view product mode"><img src="./images/icon-close-white.svg" alt="" aria-disabled="true"></span>
+            </div>
+            <div class="main-img">
+                <img class="mainImg mainImgZoomMode" src="./images/image-product-1.jpg" alt="Fall limited edition sneaker">
+                <span class="previousZoomMode" role="button" aria-label="previous image"><img src="./images/icon-previous.svg" alt="" aria-disabled="true"></span>
+                <span class="nextZoomMode" role="button" aria-label="next image"><img src="./images/icon-next.svg" alt="" aria-disabled="true"></span>
+            </div>
+            <div class="thumbnail-img">
+                <img class="thumbnailZoomMode" id="productImg" src="./images/image-product-1-thumbnail.jpg" alt="Fall limited edition sneaker">
+                <img class="thumbnailZoomMode" src="./images/image-product-2-thumbnail.jpg" alt="Fall limited edition sneaker">
+                <img class="thumbnailZoomMode" src="./images/image-product-3-thumbnail.jpg" alt="Fall limited edition sneaker">
+                <img class="thumbnailZoomMode" src="./images/image-product-4-thumbnail.jpg" alt="Fall limited edition sneaker">
+            </div>
+        </figure>
+        <div class="description">
+            <article>
+                <p class="tag">Sneaker Company</p>
+                <h1 class="productTitle">Fall Limited Edition Sneakers</h1>
+                <p class="details">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</p>
+                <div class="pricing">
+                    <div class="cost">
+                        <span class="price">$125.00</span>
+                        <span class="discount">50%</span>
+                    </div>
+                    <div class="oldCost">
+                        <span class="oldPrice">$250.00</span>
+                    </div>
+                </div>
+                <div class="cta">
+                    <div class="amount">
+                        <span class="minus" role="button" aria-label="minus"><img src="./images/icon-minus.svg" alt="" aria-disabled="true"></span>
+                        <input type="number" name="number" id="number" value="1" min="1" oninput="validity.valid||(value='');">
+                        <span class="plus" role="button" aria-label="plus"><img src="./images/icon-plus.svg" alt="" aria-disabled="true"></span>
+                    </div>
+                    <div class="addToCart">
+                        <span class="addToCartBtn" role="button" aria-label="Add to cart"><img src="./images/icon-cart-white.svg" alt="" aria-disabled="true"> Add to card</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+</html>
