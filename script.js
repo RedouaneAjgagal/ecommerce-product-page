@@ -120,7 +120,9 @@ function closeImagesFun(target) {
     target.addEventListener("click", () => {
         onClickImages.classList.remove("active");
         layerzoomMode.classList.remove("open");
-        document.body.classList.remove("no-scroll");
+        if (!insideCart.classList.contains("open")) {
+            document.body.classList.remove("no-scroll");
+        }
     });
 }
 closeImagesFun(closeImages);
