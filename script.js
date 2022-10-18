@@ -58,12 +58,25 @@ function toggleFun(target) {
 }
 toggleFun(toggle);
 toggleFun(layerBurger);
-// amount of products
+// amount of products (Plus - minus - input)
+const regex = /[.0-9]/g;
+const checkOutPriceNumber = productPrice.innerText.match(regex).join('');
 plus.addEventListener("click", () => {
     amount.value++;
+    productPrice.innerText = '$' + (Number(checkOutPriceNumber) * amount.value).toFixed(2);
 });
 minus.addEventListener("click", (e) => {
     amount.value < 2 ? e.preventDefault() : amount.value--;
+    if (amount.value !== '') {
+        productPrice.innerText = '$' + (Number(checkOutPriceNumber) * amount.value).toFixed(2);
+    }
+});
+amount.addEventListener("input", () => {
+    if (amount.value !== '') {
+        productPrice.innerText = '$' + (Number(checkOutPriceNumber) * amount.value).toFixed(2);
+    } else {
+        productPrice.innerText = '$' + (Number(checkOutPriceNumber)).toFixed(2);
+    }
 });
 // Cart toggle
 cart.addEventListener("click", () => {
@@ -73,7 +86,7 @@ cart.addEventListener("click", () => {
 // Add to cart - check out - Cart amount
 addToCart.addEventListener("click", () => {
     const regex = /[.0-9]/g
-    const checkOutPriceNum = productPrice.innerText.match(regex).join('');
+    const checkOutPriceNum = productPrice.innerText.match(regex).join('') / Number(amount.value);
     const checkOutQuantityNum = checkOutQuantity.innerText.match(regex).join('');
     if (amount.value !== '') {
         if (fullCart.classList.contains("enable")) {
@@ -151,7 +164,7 @@ thumbnailsZoomMode.forEach(img => {
         e.target.classList.add("active");
     });
 });
-// // previous - next buttons
+// previous - next buttons
 function previousPlus(mode, next, previous) {
     const nexts = document.querySelector(next);
     const previouss = document.querySelector(previous);
